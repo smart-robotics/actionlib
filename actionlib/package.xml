@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>actionlib</name>
-  <version>1.13.2</version>
+  <version>1.13.3</version>
   <description>
     The actionlib stack provides a standardized interface for
     interfacing with preemptable tasks. Examples of this include moving
@@ -21,19 +21,11 @@
   <author>Mikael Arguedas</author>
 
   <buildtool_depend version_gte="0.5.78">catkin</buildtool_depend>
-
   <build_depend>message_generation</build_depend>
-
   <depend>actionlib_msgs</depend>
-  <depend>libboost-dev</depend>
-  <depend>libboost-thread-dev</depend>
-  <depend>roscpp</depend>
-  <depend>rospy</depend>
-  <depend>rostest</depend>
   <depend>std_msgs</depend>
+  <depend>roscpp</depend>
 
   <exec_depend>message_runtime</exec_depend>
 
-  <test_depend>rosnode</test_depend>
-  <test_depend>rosunit</test_depend>
 </package>
