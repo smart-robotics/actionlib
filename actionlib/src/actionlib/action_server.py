@@ -139,8 +139,8 @@ class ActionServer:
         if self.pub_queue_size < 0:
             self.pub_queue_size = 50
         self.status_pub = rospy.Publisher(rospy.remap_name(self.ns)+"/status", GoalStatusArray, latch=True, queue_size=self.pub_queue_size)
-        self.result_pub = rospy.Publisher(rospy.remap_name(self.ns)+"/result", self.ActionResult, queue_size=self.pub_queue_size)
-        self.feedback_pub = rospy.Publisher(rospy.remap_name(self.ns)+"/feedback", self.ActionFeedback, queue_size=self.pub_queue_size)
+        self.result_pub = rospy.Publisher(rospy.remap_name(self.ns)+"/result", self.ActionResult, queue_size=self.pub_queue_size, latch=True)
+        self.feedback_pub = rospy.Publisher(rospy.remap_name(self.ns)+"/feedback", self.ActionFeedback, queue_size=self.pub_queue_size, latch=True)
 
         self.sub_queue_size = rospy.get_param('actionlib_server_sub_queue_size', -1)
         if self.sub_queue_size < 0:

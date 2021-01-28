@@ -145,9 +145,9 @@ void ActionServer<ActionSpec>::initialize()
   if (pub_queue_size < 0) {pub_queue_size = 50;}
   if (sub_queue_size < 0) {sub_queue_size = 50;}
 
-  result_pub_ = node_.advertise<ActionResult>("result", static_cast<uint32_t>(pub_queue_size));
+  result_pub_ = node_.advertise<ActionResult>("result", static_cast<uint32_t>(pub_queue_size), true);
   feedback_pub_ =
-    node_.advertise<ActionFeedback>("feedback", static_cast<uint32_t>(pub_queue_size));
+    node_.advertise<ActionFeedback>("feedback", static_cast<uint32_t>(pub_queue_size), true);
   status_pub_ =
     node_.advertise<actionlib_msgs::GoalStatusArray>("status",
       static_cast<uint32_t>(pub_queue_size), true);
